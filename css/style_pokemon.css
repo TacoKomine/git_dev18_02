@@ -1,0 +1,574 @@
+@charset "utf-8";
+
+/* ここから下に記載していく */
+body{
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+    margin: 0px 0px 0px 0px;
+}
+
+h1{
+    background-color:#1dd1a1;
+    color: #ffffff;
+    font-style: bold;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+footer{
+    text-align: center;
+    background-color:#1dd1a1;
+    color: #ffffff;
+}
+
+.wrapper-disp{
+    width: 520px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: auto;
+    padding-right: auto;
+    background-color: #ffffff;
+}
+
+/* 画面 は2:1で分割 */
+.wraper-disp-upper{
+    height: 250px;
+    margin-left: auto;
+    display: flex;
+}
+
+.disp-upper{
+    height: 200px;
+    display: flex;
+    position: relative;
+}
+
+.disp-upper_left{
+    width: 300px;
+    height: 200px;
+    border:double;
+    border-color: #000000;
+    border-radius: 5px;
+}
+
+.disp-upper-right{
+    width: 300px;
+    height: 200px;
+    position: relative;
+}
+
+#disp-capture-main{
+    position: relative;
+}
+
+#main_img_captutre{
+    width: 300px;
+    height: 200px;
+    object-fit: none;
+    position: absolute;
+}
+
+#title{
+    width: 300px;
+    height: 200px;
+    object-fit: scale-down;
+    display: block;
+}
+
+.disp-lower{
+    display: flex;
+    width: 600px;
+    margin-top: 10px;
+}
+
+.lower{
+    position: relative;
+}
+
+.text-box{
+    margin-right: 30px;
+    text-align: left;
+    border:double;
+    border-color: #000000;
+    border-radius: 5px;
+    width: 490px;
+    height: 100px;
+    padding-left: 20px;
+    padding-top: auto;
+    padding-bottom: auto;
+}
+
+#balls_status_message{
+    visibility: hidden;
+    height: 10px;
+    margin-left: 50px;
+    text-align: left;
+    font-size: 12px;
+}
+
+#my_pokemon_status{
+    display: flex;
+    width: 300px;
+    height: 200px;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+}
+
+#my_pokemon_status_img{
+    width: 35%;
+    margin-left: auto;
+    object-fit: scale-down;
+}
+
+#my_pokemon_status_text{
+    width: 120px;
+    margin-right: 0px;
+    margin-left: auto;
+    font-size: 12px;
+    text-align: left;
+    border:double;
+    border-color: #000000;
+    border-radius: 5px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: right;
+}
+
+#my_monster_name{
+    font-size: 14px;
+    font-style: bold;
+}
+
+/* //////////////////////// 
+/* ボタンのスタイル
+//////////////////////// */
+
+.button_list{
+    position: relative;
+    width: 200px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+.profile-buttons{
+    text-align: left;
+    border: none;
+    background-color: #ffffff;
+    height: 30px;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 180px;
+}
+
+.profile-buttons:hover{
+    background-color: #dfe6e9;
+}
+
+.buttons_battle_options{
+    width: 180px;
+}
+
+/* バトル画面 */
+#disp-battle-main{
+    position: relative;
+}
+
+/* //////////////////////// 
+/* アニメーション
+//////////////////////// */
+
+/* 主人公イン */
+#player_behind{
+    position: absolute;
+    height:120px;
+    object-fit: scale-down;
+    animation: anim-player-in 1.5s;
+    bottom: 0px;
+}
+
+@keyframes anim-player-in {
+    0% {
+      opacity: 0.1;
+      transform: translateX(300px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+@keyframes anim-player-out {
+    0% { opacity: 1;
+        transform: translateX(0px);
+        }
+    20%  { opacity: 0.5;}
+    100% { opacity: 0;
+        transform: translateX(-100px);
+    }
+  }
+
+/* トレーナーイン*/
+#trainer_front{
+    position: absolute;
+    height:90px;
+    object-fit: scale-down;
+    animation: anim-monster-in 1.5s;
+    top: 0px;
+    left: 200px;
+}
+
+@keyframes anim-trainer-in {
+    0% {
+      opacity: 0.1;
+      transform: translateX(-200px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+@keyframes anim-trainer-out {
+    0% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  
+    30% {
+        opacity: 0.1;
+      }
+
+    100% {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+  }
+
+
+/* ポケモン */
+#monster_front{
+    position: absolute;
+    height:90px;
+    object-fit: scale-down;
+    animation: anim-monster-in 1.5s;
+    top: 0px;
+    left: 200px;
+}
+
+@keyframes anim-monster-in {
+  0% {
+    opacity: 0.1;
+    transform: translateX(-200px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes anim-monster-ball-in {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      transform: scale(0.3, 0.3);
+    }
+  }
+
+  @keyframes anim-monster-ball-out {
+    0% {
+      opacity: 0;
+      transform: scale(0.1, 0.1);
+    }
+
+    40% {
+        opacity: 0;
+        transform: scale(0.2, 0.2);
+      }
+
+    100% {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+  }
+
+  @keyframes anim-monster-loose{
+    0%  { opacity: 1; }
+    30% { opacity: 0.3;}
+    50% { opacity: 0;}
+    100%{ ransform: translateY( 50px ); }
+  }
+
+/* 自分のモンスター */
+#my_monster_behind{
+    position: absolute;
+    height:110px;
+    object-fit: scale-down;
+    animation: anim-monster-in-to-battle 0.2s;
+    bottom: 0px;
+}
+
+@keyframes anim-monster-in-to-battle {
+    0% {
+      opacity: 0;
+      transform: scale(0.1, 0.1);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+  }
+
+  @keyframes anim-monster-damaged {
+    0% { opacity: 0; }
+    19% { opacity: 1; }
+    20% { opacity: 1; }
+    39% { opacity: 0; }
+    40% { opacity: 0; }
+    59% { opacity: 1; }
+    60% { opacity: 1; }
+    79% { opacity: 0; }
+    80% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes anim-my-monster-attack-normal {
+    0%  { opacity: 1;}
+    40% { opacity: 1;}
+    50% { opacity: 0.5;
+        transform:  translate(80px, 0px);}
+    60% { opacity: 1;}
+    100% { opacity: 1;}
+  }
+
+/* トレーナーのモンスター */
+#enemy_monster{
+    position: absolute;
+    height:90px;
+    object-fit: scale-down;
+    animation: anim-monster-in-to-battle 0.2s;
+    top: 0px;
+    left: 200px;
+}
+
+@keyframes anim-enemy-monster-attack-normal {
+    0%  { opacity: 1;}
+    40% { opacity: 1;}
+    50% { opacity: 0.5;
+        transform:  translate(-70px, 50px);}
+    60% { opacity: 1;}
+    100% { opacity: 1;}
+  }
+
+/* モンスターボール */
+#layer_monstarball{
+    position: absolute;
+    height: 200px;
+    width: 300px
+}
+
+#monsterball{
+    position: absolute;
+    height:20px;
+    object-fit: scale-down;
+    animation: ball-throw 1s;
+    transform-origin: 70% 60%;
+    top: 50px;
+    left: 200px;
+}
+
+@keyframes ball-throw { 
+    0%   { transform:  translate(-100px, 90px) scale(1.7, 1.7);    } 
+    50%   { transform:  translate(-30px, -90px) scale(1.3, 1.3);   }
+    100%  { transform:  translate(0px, -20px) scale(1, 1);   } 
+}
+
+@keyframes rumble {
+    0%   { transform:translate(0, 0); }
+    13%  { transform:translate(0, 2px) rotate(30deg); }
+    25%  { transform:translate(0, 0, 0); }
+    40%  { transform:translate(0, -2px) rotate(-30deg); }
+    50%  { transform:translate(0, 0); }
+    60%  { transform:translate(0, 2px) rotate(20deg); }
+    75%  { transform:translate(0, 0, 0); }
+    90%  { transform:translate(0, -2px) rotate(-30deg); }
+    100% { transform:translate(0, 0); }
+}
+
+@keyframes rumble2 {
+    0%   { transform:translate(0, 0); }
+    25%  { transform:translate(0, 2px) rotate(30deg); }
+    50%  { transform:translate(0, 0, 0); }
+    75%  { transform:translate(0, -2px) rotate(-30deg); }
+    100% { transform:translate(0, 0); }
+}
+
+/*  モンスターボールのエフェクト */
+/*  ポケモンは90px */
+#effect_ring1{
+    position: absolute;
+    height:10px;
+    object-fit: scale-down;
+    animation: monsterball-effect-01 0.5s;
+    transform-origin: 50% 50%;
+    top: 50px;
+    left: 200px;
+}
+
+#effect_ring2{
+    position: absolute;
+    height:18px;
+    object-fit: scale-down;
+    animation: monsterball-effect-01 0.5s;
+    transform-origin: 50% 50%;
+    top: 50px;
+    left: 200px;
+}
+
+@keyframes monsterball-effect-01 {
+    0%   { opacity: 0; 
+        transform: scale(5, 5);}
+    20%   { opacity: 0.8; 
+        transform: scale(10, 10);}
+    100% { opacity: 0; 
+        transform: scale(1, 1);}
+}
+
+@keyframes monsterball-effect-02 {
+    0%   { opacity: 0; transform: scale(1, 1);}
+    20%  { opacity: 1; transform: scale(10, 10);}
+    100% { opacity: 0; transform: scale(12, 12);}
+}
+
+/* 戦闘用のエフェクト */
+#layer-effects{
+    width: 300px;
+    height: 200px;
+    position: absolute;
+}
+
+#layer_status{
+    width: 300px;
+    height: 200px;
+    position: absolute;
+}
+
+#my_status{
+    position: absolute;
+    bottom: 0px;
+    left: 160px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 180px;
+    align-items: left;
+}
+
+#my_hp{
+    font-size: 14px;
+    margin: 0px 10px 0px 0px;
+    font-style: bold;
+}
+
+#my_hp_bar{
+    margin-top: 0px;
+    margin-left: 10px;
+    height: 20px;
+    width: 100px;
+}
+
+#enemy_status{
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 160px;
+    align-items: left;
+}
+
+#enemy_hp{
+    font-size: 14px;
+    margin: 0px 10px 0px 0px;
+    font-style: bold;
+}
+
+#enemy_hp_bar{
+    margin-top: 0px;
+    margin-left: 10px;
+    height: 18px;
+}
+
+#effect_my_monster_damage{
+    position: absolute;
+    height:90px;
+    object-fit: scale-down;
+    animation: damage-effect 0.2s;
+    bottom: 0px;
+    left: 50px;
+}
+
+#effect_enemy_monster_damage{
+    position: absolute;
+    height:70px;
+    object-fit: scale-down;
+    animation: damage-effect 0.2s;
+    top: 0px;
+    left: 180px;
+}
+
+@keyframes damage-effect {
+    0%   { opacity: 0;
+        transform: scale(0.2, 0.2);}
+    30%   { opacity: 1;
+    transform: scale(1,1);}
+    100%   { opacity: 0;
+        transform: scale(0.2, 0.2);}
+}
+
+/* GAME OVER */
+#gameover{
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    animation: anim-gameover 3s;
+    object-fit: none;
+}
+
+#win{
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    animation: anim-gameover-win 3s;
+    object-fit: none;
+}
+
+@keyframes anim-gameover {
+    0%   { opacity: 0;}
+    50%  { opacity: 0.8;}
+    100% { opacity: 1;}
+}
+@keyframes anim-gameover-win {
+    0%   { opacity: 0;}
+    10%   { opacity: 0.8;}
+    20%   { opacity: 0;}
+    30%   { opacity: 0.8;}
+    40%   { opacity: 0;}
+    50%   { opacity: 0;}
+    100% { opacity: 1;}
+}

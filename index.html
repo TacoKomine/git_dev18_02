@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style_pokemon.css">
+    <title>simple Pokemon</title>
+</head>
+<body>
+    <main>
+        <section id="pokemon-capture">
+            <div class="wrapper-disp"　id="flame-capture">
+                <h1>ポケモンを捕まえよう！！</h1>
+                <div class="flame-main">
+                    <div class="disp-upper">
+                        <div class="disp-upper_left button_list" id="capture_options">
+                            <button id="btn_init" class="profile-buttons">はじめから</button>
+                            <button id="capture_start" class="profile-buttons">草むらに入る</button>
+                            <button id="try_capture" class="profile-buttons" disabled=true>モンスターボールをなげる</button>
+                            <p id="balls_status_message">のこり　5個</p>
+                            <button id="escape" class="profile-buttons" disabled=true>にげる</button>
+                        </div>
+                        <div class="disp-upper_right" id="disp-capture-main">
+                            <img src="./img/pokemon/title.png" id="title">
+                        </div>
+                    </div>
+
+                    <div class="disp-lower">
+                        <div class="lower text-box">
+                            <p id="echo-capture_lower"></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="pokemon-battle">
+            <div class="wrapper-disp"　id="flame-battle">
+                <h1>ポケモンバトル！！</h1>
+                <div class="flame-main">
+                    <!-- 画面上 -->
+                    <div class="disp-upper battle">
+                        <div class="disp-upper_left button_list" id="capture_options">
+                            <div class="button_list" id="battle_menus">
+                                <button class="profile-buttons" id="battle_start" disabled=true>BATTLE START</button>
+                                <button class="profile-buttons buttons_battle_options" id="btn_attack_type_1" disabled=true>体当たり</button>
+                                <button class="profile-buttons buttons_battle_options"id="btn_attack_type_2" disabled=true>十八番</button>
+                                <button class="profile-buttons buttons_battle_options" id="btn_attack_type_3" disabled=true>必殺技</button>
+                            </div>
+                        </div>
+                        <div class="disp-upper_right" id="disp-battle-main">
+                            <p id="echo-battle-upper"></p>
+                            <p id="enemy_hp"></p>
+                            <p id="my_hp"></p>
+                        </div>
+                    </div>
+
+                    <div class="battle disp-lower">
+                        <div class="lower text-box" id="textbox-battle">
+                            <p id="echo-battle_lower"></p>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </section>
+        <div class="wrapper-disp" id="flame-battle">
+        <footer>
+            <small>copyrights 2020 Studio TACO All Rights Reserved.</small>
+        </footer>
+        </div>
+    </main>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="./js/scene-captuing.js"></script>
+</body>
+</html>

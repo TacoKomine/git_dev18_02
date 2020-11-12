@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+/* ここから下に記載していく */
+
+/*============================================
+全般的なスタイル
+============================================*/
+body {
+    background-color: #000000;	/*ページ全体の背景色*/
+    color: #ffffff;
+    text-align: center;		/*IE6以下でセンタリングするための対策*/
+    align-items: center;
+}
+
+.field-main{
+    display: flex;
+    width: 100%;
+    height: 500px;
+    padding-left: auto;
+    padding-right: auto;
+ /*   justify-content: space-evenly; */
+}
+
+/*============================================
+ヘッダのスタイル
+============================================*/
+.wrapper-header{
+
+}
+
+.shrine_trans_container{
+    width: 100%;
+    margin: 0 0 20px 0;
+}
+
+.btn-change_to_shrine{
+    width: 15%;
+    margin-left: 2%;
+    margin-right: 2%;
+    display: inline;
+}
+
+
+/*============================================
+神社写真（左）のスタイル
+============================================*/
+.field-shrine_img{
+    width: 43%;
+    background-color: chartreuse;
+}
+
+.field-shrine_img{
+    width: 43%;
+    background-color: chartreuse;
+}
+
+/*============================================
+おみくじボタン（中央）のスタイル
+============================================*/
+.field-button{ 
+    width: 14%;
+    align-items: center;
+    background-color: #e00000;
+}
+
+/*============================================
+結果表示（右）のスタイル
+============================================*/
+.field-result{
+    width: 43%;
+    background-color: cornflowerblue;
+}
+
+.text-result{
+
+}
